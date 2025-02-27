@@ -1,0 +1,11 @@
+id,prijmeni,jmeno,plat,profese_id
+1,noris,lando,604419200,1
+2,hulkenberg,nico,27056,3
+3,bottas,valtteri,54653,2
+4,alonso,fernando,37056,2
+5,verstappen,max,24565,3
+6,hadjar,isack,97566,1
+7,piastri,oscar,104685,1
+8,colapinto,franco,47568,2
+9,stanek,roman,18945,3
+10,leclerc,charles,78433,2
