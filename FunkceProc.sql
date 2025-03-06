@@ -72,3 +72,16 @@ go
 exec pridej_dodavku 'jablko', 40, 'bohumil';
 
 select * from dodavka;
+
+--funkce od uc
+go 
+create function zbozi_dan_kategorie(@dan_kategorie decimal(10,2))
+returns table
+as 
+return
+	select nazev, cena_ks, dan_procenta
+	from zbozi
+	where dan_procenta > @dan_kategorie
+go
+
+select * from dbo.zbozi_dan_kategorie(5);
