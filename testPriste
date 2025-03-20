@@ -1,0 +1,38 @@
+Vytvořte databázi pro správu zaměstnanců v podniku s názvem "Urad_prace" obsahující následující tabulky: zamestnanec (id, prijmeni, jmeno, vek, firma_id, pozice_id), firma (id, nazev), pozice (id, nazev).
+
+V každé firmě může být více zaměstnanců.
+Zaměstnanec v určitém období patří do jedné firmy.
+Každý zaměstnanec má právě jednu pozici, ale daná pozice může být obsazena více zaměstnanci.
+Vložte testovací data do tabulek, stačí 4 záznamy.
+Vytvořte triggery, které:
+
+a) Při propuštění zaměstnance (delete), zapíše všechny údaje o zaměstnanci a také název firmy, název pozice, typ změny ("propuštění") a čas (datetime) do záložní tabulky "zmeny_zamestnancu".
+
+b) Při přijetí nového zaměstnance (insert), zapíše všechny údaje o zaměstnanci a také název firmy, název pozice, typ změny ("přijetí") a čas (datetime) do záložní tabulky "zmeny_zamestnancu".
+
+Vytvořte procedury pro:
+
+a) Přidání nového zaměstnance do firmy .. parametry: název firmy, příjmení, jméno zaměstnance, věk, pozice.
+
+b) Změnu pozice zaměstnance .. parametry: příjmení, jméno zaměstnance, název nová pozice (zkontrolujte pozice, které jsou k dispozici, pokud tam není, vložte ji).
+
+c) Přesun zaměstnance do jiné firmy .. parametry: příjmení, jméno zaměstnance, název nové firmy (uvažujte pouze firmy, které jsou k dispozici).
+
+Vytvořte pohledy, které:
+
+a) Umožní vypsat firmy, zaměstnance a jejich pozice setříděné podle firmy, pozic a zaměstnanců abecedně.
+
+b) Umožní výpis počtu zaměstnanců na jednotlivých pozicích v jednotlivých firmách.
+
+c) Umožní výpis všech změn v zaměstnancích z tabulky "zmeny_zamestnancu".
+
+d) Umožní výpis všech, kteří nejsou k dnešnímu datu zaměstnaní
+odevzdejte:
+
+-  diagram (model) .png
+
+- script sql
+
+- export databáze včetně dat .sql
+
+(! před odevzdáním zkontrolujte, zde váš export obsahuje všechny pohledy, triggery i procedury)
