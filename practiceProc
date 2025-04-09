@@ -1,0 +1,67 @@
+CREATE PROCEDURE pridat_let
+    @prijmeni NVARCHAR(100),
+    @jmeno NVARCHAR(100),
+    @oznaceni NVARCHAR(50),
+    @datum DATE,
+    @delka_km FLOAT
+AS
+BEGIN
+    DECLARE @pilot_id INT
+    DECLARE @letadlo_id INT
+    DECLARE @spotreba_na_km FLOAT
+    DECLARE @spotreba_celkem FLOAT
+
+    SELECT @pilot_id = id FROM pilot WHERE prijmeni = @prijmeni AND jmeno = @jmeno
+    SELECT @letadlo_id = id, @spotreba_na_km = spotreba_na_km FROM letadlo WHERE oznaceni = @oznaceni
+
+    SET @spotreba_celkem = @delka_km * @spotreba_na_km
+
+    INSERT INTO let (pilot_id, letadlo_id, datum, delka_letu_km, spotreba_celkem, status_let)
+    VALUES (@pilot_id, @letadlo_id, @datum, @delka_km, @spotreba_celkem, 'aktivní')
+END
+
+//
+
+CREATE PROCEDURE zmen_stav_letu
+    @datum DATE,
+    @oznaceni NVARCHAR(50),
+    @stav NVARCHAR(50)
+AS
+BEGIN
+    DECLARE @letadlo_id INT
+    SELECT @letadlo_id = id FROM letadlo WHERE oznaceni = @oznaceni
+
+    UPDATE let
+    SET status_let = @stav
+    WHERE datum = @datum AND letadlo_id = @letadlo_id
+END
+
+//
+
+SELECT 
+    l.id, 
+    p.prijmeni + ' ' + p.jmeno AS pilot,
+    la.oznaceni AS letadlo,
+    l.datum,
+    l.delka_letu_km,
+    l.spotreba_celkem,
+    l.status_let
+FROM let l
+JOIN pilot p ON l.pilot_id = p.id
+JOIN letadlo la ON l.letadlo_id = la.id
+ORDER BY l.datum;
+
+//
+
+CREATE PROCEDURE statistiky_pro_letadlo
+    @oznaceni NVARCHAR(50)
+AS
+BEGIN
+    SELECT 
+        COUNT(*) AS pocet_letu,
+        SUM(delka_letu_km) AS celkove_km,
+        AVG(spotreba_celkem / delka_letu_km) AS prumerna_spotreba_na_km
+    FROM let
+    WHERE letadlo_id = (SELECT id FROM letadlo WHERE oznaceni = @oznaceni)
+      AND status_let NOT IN ('storno')
+END
