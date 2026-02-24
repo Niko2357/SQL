@@ -1,0 +1,21 @@
+id_jizdy,datum,ridic,auto_spz,auto_model,vzdalenost_km,spotreba_l,cena_paliva_celkem_czk,doba_jizdy,porucha,poznamka
+1,2023-01-01,Jan Novak,1A1 1234,Skoda Octavia,120.0,6.6,251,1:30,Ne,Ok
+2,01/02/2023,Petr Svoboda,2B2 5678,VW Passat,45.0,2.9,112,0:45,NE,
+3,2023-01-03,Jan Novak,3C3 9012,Skoda Superb,210.0,15.1,580,2h 30m,Ano,Vysoka spotreba
+4,2023-01-03,ridic_5,1A1 1234,Skoda Octavia,5.2,0.3,12,0:10,0,Kratka
+5,05/01/2023,Marie Cerna,4D4 3456,Hyundai i30,88.9,5.8,220,1:15,motor,Odtah
+6,2023-01-06,Petr Svoboda,1a1 1234,skoda octavia,150.0,8.2,315,1:55,,Mala pismena
+7,2023-01-07,Jiri Vesely,2B2 5678,VW Passat,300.0,19.5,760,3:20,ne,Dalnice
+8,2023-01-08,Marie Cerna,3C3 9012,Skoda Superb,10.5,0.8,32,0:15,ANO,Defekt
+9,2023-01-08,Jan Novak,4D4 3456,Hyndai i30,42.0,2.7,105,NULL,False,Chybi cas
+10,2023-01-10,Ridic 5,2B2 5678,VW Passat,15.0,1.0,38,0:20,1,
+11,2023-01-11,Jan Novak,1A1 1234,Skoda Octavia,550.0,30.2,1150,6:50,Ne,Dlouha
+12,12.01.2023,Petr Svoboda,3C3 9012,Skoda Superb,33.0,,125,45 min,NULL,Chybi spotreba
+13,2023-01-13,Jiri Vesely,4D4 3456,Hyundai i30,105.0,6.8,260,1:40,ano,
+14,2023-01-14,Marie Cerna,2B2 5678,VW Passat,12.0,0.8,30,0:15,Ne,
+15,2023-01-15,ridic_5,1A1 1234,Skoda Octavia,210.0,11.5,440,3:00,Prehrati,
+16,2023-01-16,Jan Novak,3C3 9012,Skoda Superb,44.0,3.2,122,0:40,0,
+17,2023-01-17,Petr Svoboda,4D4 3456,Hyundai i30,5.0,0.3,12,0:05,ne,
+18,2023-01-18,Jiri Vesely,1A1 1234,Skoda Octavia,92.0,5.1,195,1:20,Ne,
+19,19/01/2023,Marie Cerna,2B2 5678,VW Passat,18.0,1.2,45,0:25,ANO,
+20,2023-01-20,ridic_5,3C3 9012,Skoda Superb,305.0,22.0,850,4:30,Ne,
